@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+
+    #hour, #min{
+      position: relative;
+      top: 4px;
+    }
+
+    .gray{
+      color: rgb(44, 44, 44);
+      text-shadow: none;
+    }
+
+    .container{
+      font-family: 'Heebo', sans-serif;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-weight: 400;
+      font-size: 90px;
+      /* text-shadow: 0px 0px 1px white; */
+    }
+
+    .date{
+      position: relative;
+      top: -30px;
+      font-size: 30px;
+    }
+
+    .clock{
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%, -50%);
+    }
+    span{
+      display: inline-block;
+    }
+
+    .license{
+      position: relative;
+      top: -30px;
+      font-size: 10px;
+    }
+
+    .text-time{
+      position: relative;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(79, 79, 79);
+      font-size: 20px;
+      font-weight: 100;
+      letter-spacing: 5px;
+    }
+
+    .active{
+      
+      color: white;
+      /* text-shadow: 0px 0px 3px white; */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="clock">
+      <div class="time">
+        <span id="hour">00</span><span id="colon">:</span><span id="min">00</span>
+      </div>
+      <div class="date">
+        <span id="date">00</span>/<span id="month">00</span>/<span id="year">0000</span><br><span class="license">Made By a12314</span>
+      </div>
+    </div>
+    <!-- <div class="text-time">
+      <span class="active">IT</span>L<span class="active">IS</span>ASGTFI
+      <div>
+        AC<span id="quarter">QUARTER</span>BS<br><span id="twenty">TWENTY</span><span id="five2">FIVE</span>X<br><span id="half">HALF</span><span id="ten2">TEN</span>QWE<span id="past">PAST</span><span id="to">TO</span>GOOD
+      </div>
+      <div>
+        <span id="one">ONE</span><span id="six">SIX</span>WAKGOOD<span id="three">THREE</span><span id="four">FOUR</span>
+      </div>
+      <div>
+        <span id="five">FIVE</span><span id="two">TWO</span><span id="eight">EIGHT</span><span id="eleven">ELEVEN</span>ILSC<span id="seven">SEVEN</span><br><span id="tweleve">TWELEVE</span><span id="ten">TEN</span><span id="nine">NINE</span><span id="oclock">OCLOCK</span>ICAN
+      </div>
+      <div>
+        <span id="am">AM</span>SCRIPT<span id="midnight">MIDNIGHT</span><span id="midday">MIDDAY</span><span id="pm">PM</span>
+      </div>
+    </div> -->
+    <table class="text-time">
+      <tr>
+        <td class="active">I</td>
+        <td class="active">T</td>
+        <td>L</td>
+        <td class="active">I</td>
+        <td class="active">S</td>
+        <td>A</td>
+        <td>S</td>
+        <td>G</td>
+        <td>T</td>
+        <td>F</td>
+        <td>I</td>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td>C</td>
+        <spa id="quarter">
+          <td class="quarter">Q</td>
+          <td class="quarter">U</td>
+          <td class="quarter">A</td>
+          <td class="quarter">R</td>
+          <td class="quarter">T</td>
+          <td class="quarter">E</td>
+          <td class="quarter">R</td>
+        </spa>
+        <td>B</td>
+        <td>S</td>
+      </tr>
+      <tr>
+        <span id="twenty">
+          <td class="twenty">T</td>
+          <td class="twenty">W</td>
+          <td class="twenty">E</td>
+          <td class="twenty">N</td>
+          <td class="twenty">T</td>
+          <td class="twenty">Y</td>
+        </span>
+        <span id="five2">
+          <td class="five2">F</td>
+          <td class="five2">I</td>
+          <td class="five2">V</td>
+          <td class="five2">E</td>
+        </span>
+        <td>X</td>
+      </tr>
+      <tr>
+        <span id="half" class="active">
+          <td class="half">H</td>
+          <td class="half">A</td>
+          <td class="half">L</td>
+          <td class="half">F</td>
+        </span>
+        <td>B</td>
+        <span id="ten">
+          <td class="ten">T</td>
+          <td class="ten">E</td>
+          <td class="ten">N</td>
+        </span>
+        <td>F</td>
+        <span id="to">
+          <td class="to">T</td>
+          <td class="to">O</td>
+        </span>
+      </tr>
+      <tr>
+        <span id="past">
+          <td class="past">P</td>
+          <td class="past">A</td>
+          <td class="past">S</td>
+          <td class="past">T</td>
+        </span>
+        <td>E</td>
+        <td>R</td>
+        <td>U</td>
+        <span id="nine">
+          <td class="nine">N</td>
+          <td class="nine">I</td>
+          <td class="nine">N</td>
+          <td class="nine">E</td>
+        </span>
+      </tr>
+      <tr>
+        <span id="one">
+          <td class="one">O</td>
+          <td class="one">N</td>
+          <td class="one">E</td>
+        </span>
+        <span id="six">
+          <td class="six">S</td>
+          <td class="six">I</td>
+          <td class="six">X</td>
+        </span>
+        <span id="three">
+          <td class="three">T</td>
+          <td class="three">H</td>
+          <td class="three">R</td>
+          <td class="three">E</td>
+          <td class="three">E</td>
+        </span>
+      </tr>
+      <tr>
+        <span id="four">
+          <td class="four">F</td>
+          <td class="four">O</td>
+          <td class="four">U</td>
+          <td class="four">R</td>
+        </span>
+        <span id="five">
+          <td class="five">F</td>
+          <td class="five">I</td>
+          <td class="five">V</td>
+          <td class="five">E</td>
+        </span>
+        <span id="two">
+          <td class="two">T</td>
+          <td class="two">W</td>
+          <td class="two">O</td>
+        </span>
+      </tr>
+      <tr>
+        <span id="eight">
+          <td class="eight">E</td>
+          <td class="eight">I</td>
+          <td class="eight">G</td>
+          <td class="eight">H</td>
+          <td class="eight">T</td>
+        </span>
+        <span id="eleven">
+          <td class="eleven">E</td>
+          <td class="eleven">L</td>
+          <td class="eleven">E</td>
+          <td class="eleven">V</td>
+          <td class="eleven">E</td>
+          <td class="eleven">N</td>
+        </span>
+      </tr>
+      <tr>
+        <span id="seven">
+          <td class="seven">S</td>
+          <td class="seven">E</td>
+          <td class="seven">V</td>
+          <td class="seven">E</td>
+          <td class="seven">N</td>
+        </span>
+        <span id="twelve">
+          <td class="twelve">T</td>
+          <td class="twelve">W</td>
+          <td class="twelve">E</td>
+          <td class="twelve">L</td>
+          <td class="twelve">V</td>
+          <td class="twelve">E</td>
+        </span>
+      </tr>
+      <tr>
+        <span id="ten">
+          <td class="ten">T</td>
+          <td class="ten">E</td>
+          <td class="ten">N</td>
+        </span>
+        <td>S</td>
+        <td>E</td>
+        <span id="oclock">
+          <td class="oclock">O</td>
+          <td class="oclock">C</td>
+          <td class="oclock">L</td>
+          <td class="oclock">O</td>
+          <td class="oclock">C</td>
+          <td class="oclock">K</td>
+        </span>
+      </tr>
+    </table>
+    
+  </div>
+  <script>
+      var time = new Date();
+      var hour = time.getHours();
+      var min = time.getMinutes();
+      var year = time.getFullYear();
+      var month = time.getMonth() + 1;
+      var date = time.getDate();
+      var second = time.getSeconds();
+      if(hour < 10){
+        hour = '0' + hour;
+      }
+      if(min < 10){
+        min = '0' + min;
+      }
+      if(date < 10){
+        date = '0' + date;
+      }
+      if(month < 10){
+        month = '0' + month;
+      }
+      $('#hour').html(hour);
+      $('#min').html(min);
+      $('#date').html(date);
+      $('#month').html(month);
+      $('#year').html(year);
+
+
+
+
+      // 10TEN PAST 15QUARTER PAST 20TWENTY PAST 25TWENTYFIVE PAST  30HALF PAST 40TWENTY TO  45QUARTER TO 50TNE TO 55FIVE TO
+    function clock(){
+      var time = new Date();
+      var hour = time.getHours();
+      var min = time.getMinutes();
+      var year = time.getFullYear();
+      var month = time.getMonth() + 1;
+      var date = time.getDate();
+      var second = time.getSeconds();
+      if(hour < 10){
+        hour = '0' + hour;
+      }
+      if(min < 10){
+        min = '0' + min;
+      }
+      if(date < 10){
+        date = '0' + date;
+      }
+      if(month < 10){
+        month = '0' + month;
+      }
+      $('#hour').html(hour);
+      $('#min').html(min);
+      $('#date').html(date);
+      $('#month').html(month);
+      $('#year').html(year);
+      $('#colon').toggleClass('gray');
+      if(min >=10 && min <15 || min >=50 && min <55){
+        $('.ten2').addClass('active');
+      } else {
+        $('.ten2').removeClass('active');
+      }
+      if(min >= 45 && min < 50 || min >=15 && min < 20){
+        $('.quarter').addClass('active');
+      } else {
+        $('.quarter').removeClass('active');
+      }
+      if(min >= 30 && min < 40){
+        $('.half').addClass('active');
+      } else {
+        $('.half').removeClass('active');
+      }
+      if(min >=20 && min <30 || min >=40 && min < 45){
+        $('.twenty').addClass('active');
+      } else {
+        $('.twenty').removeClass('active');
+      }
+      if(min > 0 && min <10 || min >= 25 && min < 30 || min >=55){
+        $('.five2').addClass('active');
+      } else {
+        $('.five2').removeClass('active');
+      }
+      if(min == 0){
+        $('.oclock').addClass('active');
+      } else {
+        $('.oclock').removeClass('active');
+      }
+      if(hour <12){
+        $('#pm').removeClass('active');
+        $('#am').addClass('active');
+      } else {
+        $('#am').removeClass('active');
+        $('#pm').addClass('active');
+      }
+      if(hour == 0){
+        $('#midday').removeClass('active');
+        $('#midnight').addClass('active');
+      } else if(hour == 12){
+        $('#midnight').removeClass('active');
+        $('#midday').addClass('active');
+      }
+      if(min <= 30 ){
+        $('.to').removeClass('active');
+        $('.past').addClass('active');
+        if(hour == 1 || hour == 13){
+          $('.eleven').removeClass('active');
+          $('.one').addClass('active');
+        } else if(hour == 2 || hour == 14){
+          $('.one').removeClass('active');
+          $('.two').addClass('active');
+        } else if(hour == 3 || hour == 15){
+          $('.two').removeClass('active');
+          $('.three').addClass('active');
+        } else if(hour == 4 || hour == 16){
+          $('.three').removeClass('active');
+          $('.four').addClass('active');
+        } else if(hour == 5 || hour == 17){
+          $('.four').removeClass('active');
+          $('.five').addClass('active');
+        } else if(hour == 6 || hour == 18){
+          $('.five').removeClass('active');
+          $('.six').addClass('active');
+        } else if(hour == 7 || hour == 19){
+          $('.six').removeClass('active');
+          $('.seven').addClass('active');
+        } else if(hour == 8 || hour == 20){
+          $('.seven').removeClass('active');
+          $('.eight').addClass('active');
+        } else if(hour == 9 || hour == 21){
+          $('.eight').removeClass('active');
+          $('.nine').addClass('active');
+        } else if(hour == 10 || hour == 22){
+          $('.nine').removeClass('active');
+          $('.ten').addClass('active');
+        } else if(hour == 11 || hour == 23){
+          $('.ten').removeClass('active');
+          $('.eleven').addClass('active');
+        }
+      } else if(min > 30){
+        $('.past').removeClass('active');
+        $('.to').addClass('active');
+        if(hour == 1 || hour == 13){
+          $('.one').removeClass('active');
+          $('.two').addClass('active');
+        } else if(hour == 2 || hour == 14){
+          $('.two').removeClass('active');
+          $('.three').addClass('active');
+        } else if(hour == 3 || hour == 15){
+          $('.three').removeClass('active');
+          $('.four').addClass('active');
+        } else if(hour == 4 || hour == 16){
+          $('.four').removeClass('active');
+          $('.five').addClass('active');
+        } else if(hour == 5 || hour == 17){
+          $('.five').removeClass('active');
+          $('.six').addClass('active');
+        } else if(hour == 6 || hour == 18){
+          $('.six').removeClass('active');
+          $('.seven').addClass('active');
+        } else if(hour == 7 || hour == 19){
+          $('.seven').removeClass('active');
+          $('.eight').addClass('active');
+        } else if(hour == 8 || hour == 20){
+          $('.eight').removeClass('active');
+          $('.nine').addClass('active');
+        } else if(hour == 9 || hour == 21){
+          $('.nine').removeClass('active');
+          $('.ten').addClass('active');
+        } else if(hour == 10 || hour == 22){
+          $('.ten').removeClass('active');
+          $('.eleven').addClass('active');
+        } else if(hour == 11 || hour == 23){
+          $('.eleven').removeClass('active');
+          $('.twelve').addClass('active');
+        }
+      }
+      if(hour == 0){
+        $('#midnight').addClass('active');
+      } else {
+        $('#midnight').removeClass('active');
+      }
+      if(hour == 12){
+        $('#midday').addClass('active');
+      } else {
+        $('#midday').removeClass('active');
+      }
+    }
+    setInterval(clock, 1000);
+  </script>
+</body>
+</html>

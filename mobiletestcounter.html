@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <link rel="stylesheet" href="mobiletestcounter.css">
+</head>
+<body>
+  <div class="container">
+    <div class="dday">
+      <span>시험까지</span><br>
+      <span id="count" style="color: #B33030;"></span><br>
+      <small style="font-size: 20px;">시험<br> 4월 28일 ~ 5월 3일</small>
+    </div>
+  </div>
+  <script>
+    function counter(){
+    var dday = new Date("Apr 28,2022,00:00:00").getTime(); //디데이
+    setInterval(function(){
+      var now = new Date(); //현재 날짜 가져오기
+      var distance = dday - now;
+      var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var s = Math.floor((distance % (1000 * 60)) / 1000);
+      if(s < 10){
+        s = '0'+s;
+      }
+      $('#count').html(d+'일'+h+'시간'+m+'분'+s+'초')
+    }, 1000);
+    }
+    counter();
+  </script>
+</body>
+</html>
